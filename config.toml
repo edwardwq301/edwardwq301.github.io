@@ -5,7 +5,7 @@
 #
 #=========================================================================================
 
-base_url = "https://beautifulwq.github.io"                # Domain name of your website
+base_url = "https://edwardwq301.github.io"                # Domain name of your website
 title = "WQ Blog"
 description = "this is description"
 default_language = "en"
@@ -46,7 +46,7 @@ id = "21" # Your id / username / handle
 bio = "want to be happy" # Your bio
 avatar = "img/bing.webp" # Your avatar
 links = [ # Your links
-    { name = "GitHub", icon = "github", url = "https://github.com/beautifulwq" },
+    { name = "GitHub", icon = "github", url = "https://github.com/edwardwq301" },
     { name = "Email", icon = "email", url = "mailto:edwardwq301@gmail.com" },
 ]
 
@@ -59,7 +59,7 @@ recent_more_text = "more »"
 sections = [
     { name = "blog", path = "/blog", is_external = false },
     { name = "friends", path = "/friends", is_external = false },
-    { name = "mkdocs", path = "https://beautifulwq.github.io/wqtech", is_external = true },
+    { name = "mkdocs", path = "https://edwardwq301.github.io/wqtech", is_external = true },
     # { name = "projects", path = "/projects", is_external = false },
     # { name = "github", path = "https://github.com/<your-username>", is_external = true },
 ]

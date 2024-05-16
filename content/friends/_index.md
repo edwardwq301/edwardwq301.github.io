@@ -12,4 +12,4 @@ comment = true
 +++
 
 # friends 
-if you want to add friend link, comment on this page.
+comment on this page if you want to add friend link.

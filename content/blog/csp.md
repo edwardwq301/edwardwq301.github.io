@@ -10,7 +10,7 @@ taxonomies:
 extra:
    lang : "zh"
    toc : false
-   comment : true
+   comment : false
    copy : true
    math : false
    mermaid : false
@@ -21,8 +21,6 @@ extra:
    featured : false
 ---
 
-new post about something...
 
-<!-- more -->
 
 今天第一次考csp，没怎么系统学过算法，刚开始的半个点压力很大，旁边的哥们哐哐打字，压力很大，遇到的问题有现学 Python，怎么在 vs 里打断点。体验还行，之后争取上 300 报销。😋

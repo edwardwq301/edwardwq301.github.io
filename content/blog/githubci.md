@@ -1,6 +1,6 @@
 ---
 title : "GitHub部署"
-date : 2022-01-01
+date : 2024-05-16
 draft : false
 taxonomies:
    categories:
@@ -10,7 +10,7 @@ taxonomies:
 extra:
    lang : "zh"
    toc : false
-   comment : true
+   comment : false
    copy : true
    math : false
    mermaid : false

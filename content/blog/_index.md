@@ -9,6 +9,6 @@ generate_feed = true
 
 [extra]
 lang = 'zh'
-comment = true
+comment = false
 +++
 

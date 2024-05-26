@@ -1,6 +1,8 @@
 ---
 title: "SIFU"
 author : WQ
+extra:
+    comment: false
 taxonomies:
     categories : 
         - "life"

@@ -52,7 +52,7 @@ theme:
 
     font:
         text: "Roboto"
-        code: Hack
+        # code: Hack
     icon:
         repo: fontawesome/brands/git-alt
         logo: "material/school"
@@ -121,11 +121,10 @@ nav:
 
     - Backend:
           algorithm: backend/algorithm.md
-        #   environment: backend/problemSolve.md
-          leetcode: backend/leetcode.md
+          leetcode-part1: backend/leetcode-part1.md
+          leetcode-part2: backend/leetcode-part2.md
           剑指: backend/sword.md
           C++: backend/effectivecpp.md
-        #   Java: backend/Java.md
           Python: backend/python.md
 
     - Tools:
@@ -134,6 +133,3 @@ nav:
           Linux: tools/linux.md
 
     - Mkdocs: guide.md
-
-    # - Blog:
-    #       - blog/index.md

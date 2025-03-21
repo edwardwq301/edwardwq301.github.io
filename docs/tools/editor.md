@@ -146,6 +146,8 @@ CLion 突然发现输入 vector 不补全尖括号了，后来发现设置成 c1
 ## markdown preview enhanced
 - 打印背景（让代码块背景为灰色） [教程](https://blog.csdn.net/RP123123123/article/details/118113026)
 
+## vscode
+ctrl+k arrowKey 调整窗口位置，配合 ctrl+\
 ## VIM
 
 edit keys

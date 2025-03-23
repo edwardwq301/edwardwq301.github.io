@@ -125,3 +125,87 @@ class Solution {
     }
 }
 ```
+
+
+### 删除链表
+
+```mermaid
+flowchart LR
+    n1[1 
+    8b0]  --> n2[2
+    ad0] --> n3[3
+    ac0] --> n4[4
+    ab0]
+```
+
+直接访问数字值的删除就会出现头节点和中间节点的区别，但是用指针还有另一种方法 [来源](https://www.bilibili.com/video/BV1XX9dYHEjb/?share_source=copy_web&vd_source=2243461ea5436797acfccf909bc5f6be&t=939)
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+
+struct listNode {
+    listNode(int i) {
+        val = i;
+    }
+
+    int val;
+    listNode *next = nullptr;
+};
+
+void printNode(listNode *head) {
+    cout<<"\nbegin print\n";
+    listNode *walk = head;
+    while (walk) {
+        cout << walk->val << " address is " << walk<<endl;
+        walk = walk->next;
+    }
+}
+
+
+listNode *head = nullptr;
+
+void remove_list__entry(listNode *entry) {
+
+    listNode **indirect = &head;
+
+    while ((*indirect) != entry) {
+        indirect = &((*indirect)->next);
+    }
+// 第一次循环：
+// *indirect 是 head，即 l1 的地址。
+// 因为 *indirect != &l2，进入循环体。
+// indirect 更新为 &(l1->next)（即 l1 的 next 指针的地址）。
+// 第二次循环：
+// *indirect 是 l1->next，即 l2 的地址。
+// 此时 *indirect == &l2，循环终止。
+    *indirect = entry->next;
+// indirect 指向的是 l1->next 的地址。
+// 修改 *indirect 等于将 l1->next 的值从 &l2 改为 l2->next（即 &l3）。
+}
+
+int main() {
+    head = new listNode(1);
+    listNode l2 = listNode(2);
+    listNode l3 = listNode(3);
+    listNode l4 = listNode(4);
+    head->next = &l2;
+    l2.next = &l3;
+    l3.next = &l4;
+
+    printNode(head);
+
+    remove_list__entry(&l2);
+    printNode(head);
+
+    remove_list__entry(&l4);
+    printNode(head);
+
+    remove_list__entry(head);
+    printNode(head);
+
+    return 0;
+}
+```

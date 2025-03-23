@@ -209,3 +209,60 @@ int main() {
     return 0;
 }
 ```
+
+
+### 身高问题
+
+一组人身高为 `队尾[10, 7, 4, 8, 2, 1]队头`，队伍中往前看，10能看到所有人头，7能看到4和8，1谁也看不见
+
+分析：把下标，值，答案，列出来后发现这个题相当于找 `a[i]` 右侧第一个大于等于 `a[i]` 的元素下标,当前人能看到人头 = k-i。
+
+从左往右扫，维护单调递减的栈，因为如果两个人身高相同都为7，那么7b相当于挡住了7a的视线，和身高为10是一样的，也应该让里边元素出栈。所以不好判断相等的时候可以联系另一侧已经想明白的。
+
+```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
+
+class Solution {
+    void test(ArrayList<Integer> nums) {
+        Stack<Integer> stack = new Stack<>();
+        int[] value = new int[nums.size()];
+        for (int i = 0; i < nums.size(); i++) {
+//            当前数大于等于栈内数，弹栈
+            while (!stack.empty() && nums.get(i) >= nums.get(stack.peek())) {
+                int stackTopIndex = stack.peek();
+                value[stackTopIndex] = i - stackTopIndex;
+                stack.pop();
+            }
+            stack.push(i);
+        }
+        // 在for循环中一定会放至少一个元素，所以肯定能 peek
+        // 下标为 0  3 4 5
+        // 数字为 10 8 2 1
+        int nowMinItemIndex = stack.peek();
+        while (!stack.empty()) {
+            value[stack.peek()] = nowMinItemIndex - stack.peek();
+            stack.pop();
+        }
+        Arrays.stream(value).forEach(x -> System.out.print(x + " "));
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        ArrayList<ArrayList<Integer>> testData = new ArrayList<>();
+        testData.add(new ArrayList<>(List.of(10, 7, 4, 8, 2, 1)));
+        testData.add(new ArrayList<>(List.of(1, 2, 3, 4, 5)));
+        testData.add(new ArrayList<>(List.of(5, 4, 3, 2, 1)));
+        testData.add(new ArrayList<>(List.of(6, 3, 8, 2, 2, 2)));
+
+        for (ArrayList<Integer> nums : testData) {
+            System.out.println("\n------");
+            nums.forEach(x -> System.out.print(x + " "));
+            System.out.println();
+            solution.test(nums);
+        }
+    }
+}
+```

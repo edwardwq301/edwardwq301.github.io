@@ -2,18 +2,19 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "wqnote",
-  description: "wq's note",
+  title: "Edwardwq301",
+  description: "Edwardwq301's Note",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    search: { provider: "local" },
     nav: [
       { text: "Home", link: "/" },
       {
-        text: "tools",
+        text: "Tools",
         link: "/tools/git",
       },
       {
-        text: "backend",
+        text: "Backend",
         link: "/backend/python",
       },
     ],
@@ -21,28 +22,27 @@ export default defineConfig({
       "/tools/": [
         {
           text: "Tools",
-          collapsed: false,
+          // collapsed: false,
           items: [
             { text: "Git", link: "/tools/git" },
             { text: "编辑器", link: "/tools/editor" },
             { text: "Linux", link: "/tools/linux" },
-            { text: "Typst", link: "/tools/typst" },
           ],
         },
       ],
       "/backend/": [
         {
           text: "Backend",
-          collapsed: false,
+          // collapsed: false,
           items: [
             { text: "Python", link: "/backend/python" },
-            { text: "algorithm", link: "/backend/algorithm" },
+            { text: "Algorithm", link: "/backend/algorithm" },
             {
               text: "LeetCode",
               items: [
-                { text: "part1", link: "/backend/leetcode-part1" },
-                { text: "part2", link: "/backend/leetcode-part2" },
-                { text: "part3", link: "/backend/leetcode-part3" },
+                { text: "Part1", link: "/backend/leetcode-part1" },
+                { text: "Part2", link: "/backend/leetcode-part2" },
+                { text: "Part3", link: "/backend/leetcode-part3" },
               ],
             },
             { text: "剑指", link: "/backend/sword" },
@@ -51,8 +51,7 @@ export default defineConfig({
         },
       ],
     },
-    socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],
-    search: { provider: "local" },
+    socialLinks: [{ icon: "github", link: "https://https://github.com/edwardwq301/edwardwq301.github.io" }],
   },
   markdown: {
     image: {

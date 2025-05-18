@@ -6,7 +6,7 @@
 - [`argparse` 接收参数教程](https://tendcode.com/subject/article/python-shell/)
 - `match` : the use of the _ symbol will match with any input
 
-### 字符串
+## 字符串
 当经常进行字符串拼接式用 join 更好，类似 cpp string 的 append
 
 ```py
@@ -14,7 +14,7 @@ result_join = "".join(['a', 'b', 'c', 'd'])
 print(result_join)  # Output: 'abcd'
 ```
 
-### 列表
+## 列表
 - `if` 生成式：`la = [i for i in range(10) if i % 2 == 0]`
 - `if else` 生成式：`la = [i if i % 2 == 0 else -1 for i in range(10)]` 
 - oi 输入： `a,b,c=map(int,input().split())`
@@ -30,7 +30,7 @@ print(la_slice)
 # [0, 1, [2, 3, 4, 10]]
 ```
 
-#### 复制问题
+### 复制问题
 学 python 经典问题：
 
 ```py
@@ -91,7 +91,7 @@ def shallow_deep_part2():
     print(another)   # [[0, 1], [0, 1], [0, 1]]
 ```
 
-### 字典
+## 字典
 字典设置值
 
 ```py
@@ -106,7 +106,7 @@ d[k].append(v)
 # d.setdefault(k, []).append(v)
 ```
 
-### range
+## range
 先看一小段 cpp 和 py
 
 
@@ -152,7 +152,7 @@ for i in range(len(L)):
 
 [参考资料,值得一看](https://www.reddit.com/r/learnpython/comments/525sti/comment/d7hmvnb/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
 
-### yield
+## yield
 - 在函数中执行完 yield 后下次执行从下一条开始直到再次执行一次 yield，相当于 return 一个值后下次继续执行
 - 返回一个生成器，可以遍历， `for i in generator`，有点像 cpp 的 iterator
 
@@ -172,7 +172,7 @@ for val in test_yield():
 print(val)
 ```
 
-### 类
+## 类
 python 用双下划线表示不同的用途，主要是大家约定俗成，没有像 cpp 或 Java 那么严格的方式
 
 ```py
@@ -215,7 +215,7 @@ match name:
         print("Who?")
 ```
 
-### 概率抽取
+## 概率抽取
 - 假如现在要以特定概率抽取列表里元素，可以用 `random.choices(todo_list,[0.05,0.9,0.05])` 
 - 但是假如要是列表抽取一个元素, `choices` 就不太方便，可以用以下方法：
 
@@ -230,7 +230,7 @@ else:
 print("no")
 ```
 
-### socket demo
+## socket demo
 - server: create socket, bind, listen, accept
 - client: create socket, connect
 
@@ -297,8 +297,8 @@ client_socket.close()
 
 ```
 
-### fun problem
-#### 114514
+## fun problem
+### 114514
 数字生成器，[原理](https://github.com/USTC-Hackergame/hackergame2020-writeups/blob/3877a242223afcb65d8f8f4c532f2fd5f46e38e9/official/%E8%B6%85%E7%B2%BE%E5%B7%A7%E7%9A%84%E6%95%B0%E5%AD%97%E8%AE%BA%E8%AF%81%E5%99%A8/README.md)
 
 ```py
@@ -322,7 +322,7 @@ print(anw)
 return anw
 ```
 
-#### i18n
+### i18n
 i18n 是 internationalization 的缩写
 
 可以用 dfs 生成缩写（abbreviation）,[另一种dfs实现是](https://github.com/keon/algorithms/blob/cad4754bc71742c2d6fcbd3b92ae74834d359844/algorithms/backtrack/generate_abbreviations.py)
@@ -358,7 +358,7 @@ iget = generate_abbreviations(word)
 assert set(iget) == set(word_res)
 ```
 
-#### 求所有的回文字串
+### 求所有的回文字串
 `'abcbab' => [['abcba', 'b'], ['a', 'bcb', 'a', 'b'], ['a', 'b', 'c', 'bab'], ['a', 'b', 'c', 'b', 'a', 'b']]`
 
 不是很好想，直接抄答案😭
@@ -401,7 +401,7 @@ for i in anw:
     print(i)
 ```
 
-#### Gale Shapley
+### Gale Shapley
 稳定匹配，稳定婚姻。个人认为先把**问题理解清楚**是最重要的
 
 假如有三个男生，三个女生，大家都有一个评价列表，现在两两配对，不能出现以下情况：

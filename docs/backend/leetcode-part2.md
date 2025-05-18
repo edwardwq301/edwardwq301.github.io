@@ -1,4 +1,4 @@
-### 232 两个栈实现队列
+## 232 两个栈实现队列
 push 的时候好说，在 pop 的时候没有必要全倒腾，只有在输出栈为空的时候再倒腾就行了
 
 ```cpp
@@ -43,7 +43,7 @@ public:
 };
 ```
 
-### 236 二叉树的最近公共祖先
+## 236 二叉树的最近公共祖先
 只感觉出是后序遍历（当时红皮书图论看有没有环），但是在祖先是本身和上边节点卡了
 
 ```cpp
@@ -60,7 +60,7 @@ public:
 };
 ```
 
-### 238 除自身以外数组的乘积
+## 238 除自身以外数组的乘积
 前缀和思路，这个是前缀乘和后缀乘。
 
 ```cpp
@@ -84,7 +84,7 @@ public:
 
 
 
-### 239 滑动窗口最大值
+## 239 滑动窗口最大值
 最开始想到的是窗口新进的值更大，那么窗口里所有比它小的都不是答案了，看提示发现是双端队列存候选答案，不是答案不用存。这也是单调队列（可以相等元素）的一个应用
 
 ```cpp
@@ -112,7 +112,7 @@ public:
 };
 ```
 
-### 240 搜索二维矩阵
+## 240 搜索二维矩阵
 从右上角往左边和下边看是二叉树
 
 ```cpp
@@ -131,7 +131,7 @@ public:
 };
 ```
 
-### 274 H指数
+## 274 H指数
 看起来挺简单，做起来难
 
 有 H 个数大于等于 H，找最大的 H
@@ -234,7 +234,7 @@ public:
 };
 ```
 
-### 283 移动0
+## 283 移动0
 联动 26 27，把非零都捡出来
 
 ```java
@@ -318,7 +318,7 @@ public:
 ```
 
 
-### 287 寻找重复数
+## 287 寻找重复数
 
 以[1,3,4,2,2]为例，如果有相同数字，相当于会存在一个环
 
@@ -359,7 +359,7 @@ public:
 ```
 
 
-### 347 前 K 个高频元素
+## 347 前 K 个高频元素
 哈希表记录出现次数，用最大堆挑出答案
 
 ```cpp
@@ -382,7 +382,7 @@ public:
 };
 ```
 
-### 367 有效的完全平方数
+## 367 有效的完全平方数
 和 69 题联动，先找到平方根的整数，然后判断；或者 `n^2 = (1+3...+2n-1)` 用奇数能一直减到零就是完全平方数
 ```java
 class Solution {
@@ -413,7 +413,7 @@ class Solution {
 }
 ```
 
-### 394 字符串解码
+## 394 字符串解码
 看起来挺简单的，做起来就不是一回事了。直接背下来，另外不要一次处理太多，比如看到一个数字不要再开 while 处理，不然的话在下标上就会很难处理。
 
 ```cpp
@@ -455,7 +455,7 @@ public:
 ```
 
 
-### 402 移掉K位数字
+## 402 移掉K位数字
 假如只要删 1 位 `4321,2341,4231` 很容就看出答案应该删除 4
 
 周姓室友直觉很敏锐啊，如果当前处理的那一位前边有比它大的，大的就应该删除，很自然的想到看前边的状态就用栈。这个题就是单调栈（或者说是从前到后选的时候尽量选一些小的数字，比如 `2341` 选 4 不选 1）
@@ -545,7 +545,7 @@ public:
 };
 ```
 
-### 437 路径总和
+## 437 路径总和
 
 ```cpp
 class Solution {
@@ -575,7 +575,7 @@ public:
 };
 ```
 
-### 438 找到字符串中所有字母异位词
+## 438 找到字符串中所有字母异位词
 滑动窗口
 
 ```cpp
@@ -616,7 +616,7 @@ public:
 };
 ```
 
-### 543 二叉树的直径
+## 543 二叉树的直径
 后序遍历找到左子树的最大深度，右子树的最大深度，加起来就是当前节点为根的直径，有可能不经过根节点，所以用全局变量
 
 ```cpp
@@ -639,7 +639,7 @@ public:
 };
 ```
 
-### 560 和为 K 的子数组
+## 560 和为 K 的子数组
 开始以为是滑动窗口，但是带负数，做不出来，提示有前缀和，之后暴力找的
 
 ```cpp
@@ -737,7 +737,7 @@ public:
 };
 ```
 
-### 739 每日温度
+## 739 每日温度
 2024-01-03 看到公众号发的，当时有个朦胧的思路，想到用单调栈，然后发现力扣曾经交过这个题，复习一下
 
 开始是这么想的，用 `[1, 5, 4, 2, 7]` 试了一下，答案是 `[1, 3, 2, 1, 0]` ，从后往前来，（最后一个元素的答案一定是 0），7 先压栈，2 比 7 小，答案是 1，4 的下一个气温应该是 7，但是栈里现在有个 2 ，不是我们想要的就弹出，所以总结出，当前指向元素比栈顶小就入栈，比栈顶大就不断弹栈，如果等于栈顶呢，举个例子就好了 `[2, 2, 7]`，很容易就得出应该弹栈，因为我们找的是比当前元素大的气温。
@@ -805,7 +805,7 @@ public:
 做出来了，feel good🥰
 
 
-### 784 字母大小写全排列
+## 784 字母大小写全排列
 不能用每次都收集，因为没法区分 `ab pos=1` 和 `ab pos=2` ，导致重复收集
 
 应该用下标超界做收集条件
@@ -941,7 +941,7 @@ public:
 };
 ```
 
-### 844 比较含退格的字符串
+## 844 比较含退格的字符串
 最直接的想法：模拟
 
 ```java
@@ -1055,7 +1055,7 @@ public class Solution {
 }
 ```
 
-### 890 查找和替换模式
+## 890 查找和替换模式
 题非常好地给出提示：是双射关系，不能 `f(a) = 1 f(a) = 2` 同时存在，只能是`f(a) = 1 f(1) = a`同时成立
 
 可以列出表格
@@ -1160,7 +1160,7 @@ class Solution {
 }
 ```
 
-### 904 水果成篮
+## 904 水果成篮
 就是找一段区间尽可能长，区间内只有两种元素
 
 用滑动窗口，不能用变量存值去删除，原因下边 java
@@ -1276,7 +1276,7 @@ public:
 };
 ```
 
-### 977 有序数组平方
+## 977 有序数组平方
 直观做法：先找第一个大于等于 0 的数，然后往两边选
 
 巧妙做法：两边开选，选较大的放在答案最后
@@ -1349,7 +1349,7 @@ class Solution {
 }
 ```
 
-### 1475 商品折扣后最终价格
+## 1475 商品折扣后最终价格
 这个题和 739 是一个类型，假设 `[4,8,3,7]`，可以用 3 更新前边的 4，8，也就是当前的值比前边的小，就出栈之前内容并更新。
 
 完全可以先复制一份一模一样的，更新的话能更新好之前的。不能更新的也是本身。要不然就是最后再全部出栈
@@ -1401,7 +1401,7 @@ public:
 ```
 
 
-### 763 划分字母区间
+## 763 划分字母区间
 最开始没什么想法，然后仔细读题，发现相同字母都在一个区间，然后连了一下同一个字母的最前和最后，发现可以看成合并区间那道题
 
 ```cpp
@@ -1474,7 +1474,7 @@ public:
 };
 ```
 
-### 1658 将 x 减到 0 的最小操作数
+## 1658 将 x 减到 0 的最小操作数
 反转问题，相当于找一段长度尽可能大的连续子数组，`子数组之和等于整个数组和 - x`
 
 ```cpp
@@ -1508,7 +1508,7 @@ public:
 };
 ```
 
-### 1953 工作最大周数
+## 1953 工作最大周数
 好比插空，最大值 max_element,剩下的为 rest。
 
 - 如果 `rest <= max_element - 1` 合法的有 `2*rest+1`
@@ -1528,7 +1528,7 @@ public:
 };
 ```
 
-### 2335 装满杯子
+## 2335 装满杯子
 正确方法是每次取剩余水最多的两个，直到只剩一杯水
 
 ```cpp
@@ -1564,7 +1564,7 @@ public:
 };
 ```
 
-### 最长连续公共子序列
+## 最长连续公共子序列
 [题目](https://www.acwing.com/problem/content/description/3695/)
 
 成功字母个数和尝试长度不能只用一个变量表示两件事，不然用 substr 就很难受，比如 a.sub(ia,try)=b.sub(ib,try) 如果 try++，取答案长度就得 try-1。但是这样有时候是错的。
@@ -1614,7 +1614,7 @@ int main() {
 }
 ```
 
-### 第K大的数
+## 第K大的数
 
 [链接](https://leetcode.cn/problems/kth-largest-element-in-an-array/description/)
 
@@ -1748,7 +1748,7 @@ int main() {
 }
 ```
 
-### 两个有序数组第K大元素
+## 两个有序数组第K大元素
 这里指的是排列好后，下标为`k-1`的元素，不是去重后的第K大
 
 1. 最基础的：两个数组合并到一个大数组，排序，返回即可
@@ -1837,7 +1837,7 @@ int kthElement(vector<int> &arr1, vector<int> &arr2, int arr1len, int arr2len, i
 - [印度老哥的视频讲解](https://takeuforward.org/data-structure/k-th-element-of-two-sorted-arrays/#google_vignette)
 - [有关cut的讲解](https://blog.csdn.net/hk2291976/article/details/51107778?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-51107778-blog-119826156.235%5Ev40%5Epc_relevant_3m_sort_dl_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-51107778-blog-119826156.235%5Ev40%5Epc_relevant_3m_sort_dl_base4&utm_relevant_index=2)
 
-### 环形链表2
+## 环形链表2
 
 [题目链接](https://leetcode.cn/problems/linked-list-cycle-ii/description/)
 
@@ -1889,7 +1889,7 @@ ListNode *detectCycle(ListNode *head) {
 };
 ```
 
-### 最短无序连续子数组
+## 最短无序连续子数组
 **双指针**
 
 - 找出升序，降序的区间，中间就是无序。
@@ -1983,7 +1983,7 @@ public:
 ```
 
 
-### 最长上升子序列
+## 最长上升子序列
 1. dp $O(n^2)$ , `dp[i]=max(dp[i],dp[j]+1) when a[i]>a[j],`
 2. dp+贪心，每次找 `x<=anw[i]`的左端点更新
 3. 记忆化搜索
@@ -2048,7 +2048,7 @@ int main() {
 }
 ```
 
-### 数组中的逆序对
+## 数组中的逆序对
 
 - 归并排序，注意循环的边界是 `l r`不是 **0**
 - 套模板会空间多一点但是直观，优化一下相当于不停在求子问题
@@ -2129,7 +2129,7 @@ int mergesort(vector<int> &nums, int l, int r, vector<int> &tem) {
 };
 ```
 
-### 编辑距离
+## 编辑距离
 [题解](https://leetcode.cn/problems/edit-distance/solutions/2468072/dai-ma-sui-xiang-lu-72-bian-ji-ju-chi-by-or3j/)
 
 可以优化成O(M)
@@ -2200,7 +2200,7 @@ public:
 ```
 
 
-### Decimal dominants
+## Decimal dominants
 Given an array with n keys, design an algorithm to find all values that occur more than  n/10 times. The expected running time of your algorithm should be linear. [题解](https://www.cnblogs.com/evasean/p/7273857.html) 这个让我联想到莫尔投票法的一个题[力扣169](https://leetcode.cn/problems/majority-element/description/)
 
 two sum with link node
@@ -2239,7 +2239,7 @@ public:
 };
 ```
 
-### 75 颜色分类
+## 75 颜色分类
 
 
 ```cpp
@@ -2311,7 +2311,7 @@ while (mid<=high){
 ```
 
 
-### Merging with smaller auxiliary array
+## Merging with smaller auxiliary array
 given an array[2n], which is sorted from a[0] to a[n], and sorted from a[n+1] to a[2n]. you need to sort the entire array with O(n) space
 
 solve:
@@ -2366,7 +2366,7 @@ int main() {
 }
 ```
 
-### Taxicab numbers
+## Taxicab numbers
 find items like `a^3+b^3=c^3+d^3`
 
 可以这么想，看成横纵 1 到 n 的矩阵，里边填写立方和。上三角和下三角的元素一样所以只考虑上三角。
@@ -2480,7 +2480,7 @@ return 0;
 }
 ```
 
-### lakes
+## lakes
 [链接](https://codeforces.com/contest/1829/problem/E)
 
 这个题在于剪枝，有的不用再dfs了，不然超时。假如（1，1）和（1，2）联通，dfs（1，1）和dfs（1，2）是一个结果。
@@ -2545,7 +2545,7 @@ return 0;
 
 ```
 
-### Hits Different
+## Hits Different
 [链接](https://codeforces.com/contest/1829/problem/G)
 
 [前缀和动画讲解](https://usaco.guide/silver/more-prefix-sums?lang=cpp#2d-prefix-sums)
@@ -2587,7 +2587,7 @@ return 0;
 }
 ```
 
-### Distinct Split
+## Distinct Split
 [链接](https://codeforces.com/contest/1791/problem/D)
 
 1. 一次遍历统计出所有字母的出现次数
@@ -2597,7 +2597,7 @@ return 0;
 巧妙在相当于并行处理2个字符串，想不出来😥 
 
 
-### 读者写者问题
+## 读者写者问题
 [wiki](https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem#)
 
 

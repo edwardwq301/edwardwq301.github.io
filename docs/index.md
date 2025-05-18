@@ -2,11 +2,11 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 hero:
-  # name: "Edwardwq301"
-  text: "edwardwq301"
-  tagline: My great project tagline
+  name: "Edwardwq301"
+  # text: "Edwardwq301"
+  tagline: Less is more
 ---
 
-- Undergraduate student in software engineering
+- undergraduate student in software engineering
 - edwardwq301@qq.com
 - hobbies: novel, acgn, do nothing

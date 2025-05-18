@@ -51,7 +51,7 @@ export default defineConfig({
         },
       ],
     },
-    socialLinks: [{ icon: "github", link: "https://https://github.com/edwardwq301/edwardwq301.github.io" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/edwardwq301/edwardwq301.github.io" }],
   },
   markdown: {
     image: {

@@ -36,6 +36,8 @@ export default defineConfig({
           // collapsed: false,
           items: [
             { text: "Python", link: "/backend/python" },
+            { text: "TypeScript", link: "/backend/typescript" },
+            { text: "Java", link: "/backend/java" },
             { text: "Algorithm", link: "/backend/algorithm" },
             {
               text: "LeetCode",

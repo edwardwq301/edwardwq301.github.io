@@ -52,6 +52,12 @@ export default defineConfig({
           ],
         },
       ],
+      "/others/": [
+        {
+          text: "Others",
+          items: [{ text: "English", link: "/others/english" }],
+        },
+      ],
     },
     socialLinks: [{ icon: "github", link: "https://github.com/edwardwq301/edwardwq301.github.io" }],
   },

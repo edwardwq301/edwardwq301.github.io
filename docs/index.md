@@ -7,6 +7,5 @@ hero:
   tagline: Less is more
 ---
 
-- undergraduate student in software engineering
 - edwardwq301@qq.com
 - hobbies: novel, acgn, do nothing

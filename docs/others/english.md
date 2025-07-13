@@ -10,3 +10,12 @@
 - profanity：亵渎。pro 有会员的、高级的意思，fan 联想到 onlyfans，神皇在上，这是何等的亵渎
 - obscenity：淫秽。obs 联想到录屏的obs，看小视频和生产小视频都和录制有关
 - obnoxious：令人讨厌的。ob 一串字母（丰川祥子）是令人讨厌的，因为祥子经常说 no
+
+## 无用小知识
+philter: a drink credited with magical power; can make the one who takes it love the one who gave it. 本子题材催眠用的药水
+
+aphrodisiac: a drug or other agent that stimulates sexual desire. 提升欲望和能力的药水
+
+thorax 多指解剖学的胸部
+chest  多指广义上的胸部，用的较多
+breast 可以专指女性bomb，就是口语化变得更正式一点，同时男性不能用breast描述胸部

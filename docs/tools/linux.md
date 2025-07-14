@@ -1,48 +1,3 @@
-# Linux tricks
-## dotfiles
-经常重装系统/虚拟机的可能遇到安装 `vimrc` 等配置的苦恼，那么这个工具可以帮助你 
-
-- [仓库链接](https://github.com/anishathalye/dotbot)
-- [quick start](https://www.elliotdenolf.com/blog/bootstrap-your-dotfiles-with-dotbot)
-
-还可以配合 puppet 快速开荒新机，比如生成用户等
-
-## SSH
-假设用户是 `wqq`
-
-part1：生成并上传密钥
-```bash
-ssh-keygen -t rsa
-# this use default loacation ~/.ssh/id_rsa.pub
-ssh-copy-id wqq@server_ip 
-# or use a specific public_key
-# ssh-copy-id -i path/public_key user@server_ip
-```
-
-part2：确保密钥登录权限打开，大部分都是 `/etc/ssh/sshd_config`，（不确定可以用 `locate sshd_config
-` 找一下）
-```bash
-PubkeyAuthentication yes
-PasswordAuthentication yes
-# if you want to allow password authentication
-```
-
-part3：重启 ssh 服务 `sudo systemctl restart ssh`
-
-另外我发现还有些**注意**
-
-- `authorized_keys` 要能被 wqq 自己读
-- `/home/wqq` 别人不能有写的权限，就是 user group other 中的 other 不能有 w 权限
-
-出错了还可以翻日志
-
-Ubuntu, Debian:
-
-- SSH server logs: `/var/log/auth.log`
-- SSH client logs: `/var/log/syslog`
-
-eg: `Mar 17 14:06:36 ub sshd[15869]: Authentication refused: bad ownership or modes for directory /home/wqq`
-
 ## clash
 25年3月买的99一年的阿里云服务器，不知道为什么访问 GitHub 失败，在23年还能正常用的。使用 [mihomo](https://github.com/MetaCubeX/mihomo) 进行代理。
 
@@ -61,35 +16,35 @@ eg: `Mar 17 14:06:36 ub sshd[15869]: Authentication refused: bad ownership or mo
 2. 下载[GeoLite2-Country.mmdb](https://github.com/Loyalsoldier/geoip)，启动mihomo时会下载，但是往往下载失败。手动下载后命名为 `Country.mmdb` 放在 `/etc/mihomo/` 文件夹下
 3. 创建service来自动化，`sudo vim /etc/systemd/system/mihomo.service`
 
-    ```
-    [Unit]
-    Description=mihomo Daemon, Another Clash Kernel.
-    After=network.target NetworkManager.service systemd-networkd.service iwd.service
+```
+[Unit]
+Description=mihomo Daemon, Another Clash Kernel.
+After=network.target NetworkManager.service systemd-networkd.service iwd.service
 
-    [Service]
-    Type=simple
-    LimitNPROC=500
-    LimitNOFILE=1000000
-    CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SYS_TIME CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
-    AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SYS_TIME CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
-    Restart=always
-    ExecStartPre=/usr/bin/sleep 1s
-    # 注意下边软件地址和配置文件地址，用别的也行
-    ExecStart=/usr/bin/mihomo -d /etc/mihomo
-    ExecReload=/bin/kill -HUP $MAINPID
+[Service]
+Type=simple
+LimitNPROC=500
+LimitNOFILE=1000000
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SYS_TIME CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_RAW CAP_NET_BIND_SERVICE CAP_SYS_TIME CAP_SYS_PTRACE CAP_DAC_READ_SEARCH
+Restart=always
+ExecStartPre=/usr/bin/sleep 1s
+# 注意下边软件地址和配置文件地址，用别的也行
+ExecStart=/usr/bin/mihomo -d /etc/mihomo
+ExecReload=/bin/kill -HUP $MAINPID
 
-    [Install]
-    WantedBy=multi-user.target
-    ```
+[Install]
+WantedBy=multi-user.target
+```
 
 4. 重启服务
 
-    ```
-    sudo systemctl daemon-reload
-    sudo systemctl enable mihomo
-    sudo systemctl start mihomo
-    sudo systemctl status mihomo
-    ```
+```
+sudo systemctl daemon-reload
+sudo systemctl enable mihomo
+sudo systemctl start mihomo
+sudo systemctl status mihomo
+```
 
 5. **必要的一步：**如果想在 Linux 中让​命令行工具（如 curl、wget、git、apt 等）走代理，通常需要在 ~/.bashrc（或 ~/.zshrc）中设置 http_proxy 和 https_proxy 环境变量。**其实也能git自己走代理**。总之我让所有的都走代理了。
 
@@ -114,21 +69,8 @@ web页面
 
 其实主要就是[照着抄人家的](https://nanodesu.net/archives/47/)，补充了还要 bash 配置
 
-
-## IO
-同步（拷贝）IO：假如是同步的 read，直到读完（内核空间拷到用户空间） read 才返回，
-
-异步（拷贝）IO：read 直接返回，真正拷贝完会使用回调函数通知用户
-
-eg： 烧水同步，一直看水开了再干别的；烧水异步，水开了会响铃，告诉我开了
-
-[参考](https://www.cyhone.com/articles/reunderstanding-of-non-blocking-io/)
-
-
-## cheatsheet
-- `adduser` is more convenient than `useradd`
-
 ## others
+### 管道重定向
 `some failed command > failed.txt 2>&1` 这个是把错误重定向到 `failed.txt`，为什么不能 `some failed command 2>&1 > failed.txt`，我的理解如下
 
 正确的做法为什么行
@@ -147,3 +89,12 @@ eg： 烧水同步，一直看水开了再干别的；烧水异步，水开了�
 ```
 
 还可以写成 `some failed command &> failed.txt` 或者 `some failed command &>> failed.txt`，[后者在 bash4 开始可以](https://stackoverflow.com/a/876267/24175021)
+
+### 同步异步
+同步（拷贝）IO：假如是同步的 read，直到读完（内核空间拷到用户空间） read 才返回，
+
+异步（拷贝）IO：read 直接返回，真正拷贝完会使用回调函数通知用户
+
+eg： 烧水同步，一直看水开了再干别的；烧水异步，水开了会响铃，告诉我开了
+
+[参考](https://www.cyhone.com/articles/reunderstanding-of-non-blocking-io/)

@@ -25,8 +25,9 @@ export default defineConfig({
           // collapsed: false,
           items: [
             { text: "Git", link: "/tools/git" },
-            { text: "编辑器", link: "/tools/editor" },
             { text: "Linux", link: "/tools/linux" },
+            { text: "新机开荒", link: "/tools/assart" },
+            { text: "编辑器", link: "/tools/editor" },
           ],
         },
       ],

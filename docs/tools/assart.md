@@ -1,3 +1,4 @@
+# 新机开荒
 ## 创建用户
 创建用户并附加 wheel 组，fedora wheel 默认有sudo权限
 
@@ -31,7 +32,7 @@ PasswordAuthentication yes
 
 part3：重启 ssh 服务 `sudo systemctl restart ssh`
 
-另外我发现还有些**注意**
+另外我发现还有些注意事项
 
 - `authorized_keys` 要能被 zhy 自己读
 - `/home/zhy` 别人不能有写的权限，就是 user group other 中的 other 不能有 w 权限

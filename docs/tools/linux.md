@@ -1,3 +1,4 @@
+# Linux 知识
 ## clash
 25年3月买的99一年的阿里云服务器，不知道为什么访问 GitHub 失败，在23年还能正常用的。使用 [mihomo](https://github.com/MetaCubeX/mihomo) 进行代理。
 
@@ -46,11 +47,9 @@ sudo systemctl start mihomo
 sudo systemctl status mihomo
 ```
 
-5. **必要的一步：**如果想在 Linux 中让​命令行工具（如 curl、wget、git、apt 等）走代理，通常需要在 ~/.bashrc（或 ~/.zshrc）中设置 http_proxy 和 https_proxy 环境变量。**其实也能git自己走代理**。总之我让所有的都走代理了。
+5. **必要的一步** ：如果想在 Linux 中让​命令行工具（如 curl、wget、git、apt 等）走代理，通常需要在 ~/.bashrc（或 ~/.zshrc）中设置 http_proxy 和 https_proxy 环境变量。**其实也能git自己走代理**。总之我让所有的都走代理了。
 
 ```
-bashrc
-# 设置 HTTP/HTTPS 代理
 export http_proxy="http://127.0.0.1:7890"
 export https_proxy="http://127.0.0.1:7890"
 export all_proxy="socks5://127.0.0.1:7890"

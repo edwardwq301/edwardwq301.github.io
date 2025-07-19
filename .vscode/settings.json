@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
     "others",
-    "assard"
+    "assard",
+    "vue"
   ]
 }

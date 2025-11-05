@@ -3,6 +3,44 @@ title: editor
 time: 2022-4-5
 ---
 
+## VIM
+### Edit
+
+- visio block后进入insert `Shift-i`
+- undo all the changes on a line, `type U`
+- replace steadily `R`
+- changes to the end `C / D`
+- put before the cursor `P`
+- delete the char under cursor and enter insert mode `s`, and `S or CC` is the whole line
+- search the word under cursor forward/backward `\* #` and can use `4\`* to use number
+
+### Move
+
+- move to the beginning of sentence/paragraph/block `( { [in normal`
+
+### File
+
+- show where you are in a file `<C-g>`
+- jump to file under cursor `<C-]>`
+- retrieves disk file FILENAME and puts it below the cursor position `:r FILENAME`
+
+### Buffer and windows
+
+- list all open buffers `ls`
+- switch to a specific buffer `:b N`
+- change buffer `bn/bp or :buffer (press tab)` buffer next/previous
+- toggles between the last two files you edited `<C-^>`.  press ctrl and 6 or ctrl shift 6
+
+### Jump
+
+- `<C-]>` 压tag栈 可用于文件跳转
+- `<C-t>` 出tag栈
+- `<C-o>` 后退到跳转列表（线性， gg G等操作）的上一个位置
+- `<C-i>` 前进到跳转列表的下一个位置
+- `^` 最近编辑的两个文件互相跳转 a<->b
+
+[vim和系统剪贴板交互](https://www.zhihu.com/question/19863631/answer/89354508)
+
 
 ## C++
 CLion 突然发现输入 vector 不补全尖括号了，后来发现设置成 c11 就行了即 `set(CMAKE_CXX_STANDARD 11)`
@@ -14,7 +52,7 @@ CLion 突然发现输入 vector 不补全尖括号了，后来发现设置成 c1
 
 关闭函数参数提示(inlay hints) `ctrl+shift+p;clangd:toggle inlay hints`
 
-智能补全不把参数填入 [源链接](https://stackoverflow.com/questions/76004921/how-can-i-disable-parameter-auto-completion-when-selecting-a-suggested-function)，在 `setting.json` 加入 
+智能补全不把参数填入 [源链接](https://stackoverflow.com/questions/76004921/how-can-i-disable-parameter-auto-completion-when-selecting-a-suggested-function)，在 `setting.json` 加入
 
 ```
 "clangd.arguments": [
@@ -27,33 +65,3 @@ CLion 突然发现输入 vector 不补全尖括号了，后来发现设置成 c1
 
 ## vscode
 ctrl+k arrowKey 调整窗口位置，配合 ctrl+\
-## VIM
-
-edit keys
-
-- visio block后进入insert `Shift-i`
-- undo all the changes on a line, `type U`
-- replace steadily `R`
-- changes to the end `C / D`
-- put before the cursor `P`
-- delete the char under cursor and enter insert mode `s`, and `S or CC` is the whole line 
-- search the word under cursor forward/backward `\* #` and can use `4\`* to use number
-
-move keys
-
-- move to the beginning of sentence/paragraph/block `( { [in normal`
-
-file keys
-
-- show where you are in a file `<C-g>`
-- jump to file under cursor `<C-]>` 
-- retrieves disk file FILENAME and puts it below the cursor position `:r FILENAME` 
-
-buffer and windows
-
-- list all open buffers `ls`
-- switch to a specific buffer `:b N`
-- change buffer `bn/bp or :buffer (press tab)` buffer next/previous
-- toggles between the last two files you edited `<C-^>`.  press ctrl and 6 or ctrl shift 6
-
-[vim和系统剪贴板交互](https://www.zhihu.com/question/19863631/answer/89354508)

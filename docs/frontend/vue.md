@@ -44,3 +44,5 @@ const handleChildEvent = (arg) => {
   <Child @some-event="handleChildEvent" />
 </template>
 ```
+
+子组件收集表单数据，用 emit 发送数据给父组件，父组件调用 api 是一种良好实践

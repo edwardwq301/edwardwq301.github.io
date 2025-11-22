@@ -24,32 +24,32 @@ export default defineConfig({
           text: "Tools",
           // collapsed: false,
           items: [
+            { text: "编辑器", link: "/tools/editor" },
             { text: "Git", link: "/tools/git" },
             { text: "Linux", link: "/tools/linux" },
             { text: "新机开荒", link: "/tools/assart" },
-            { text: "编辑器", link: "/tools/editor" },
           ],
         },
       ],
       "/backend/": [
         {
           text: "Backend",
-          // collapsed: false,
+          collapsed: true,
           items: [
             { text: "Python", link: "/backend/python" },
             { text: "TypeScript", link: "/backend/typescript" },
-            { text: "Java", link: "/backend/java" },
-            { text: "Algorithm", link: "/backend/algorithm" },
-            {
-              text: "LeetCode",
-              items: [
-                { text: "Part1", link: "/backend/leetcode-part1" },
-                { text: "Part2", link: "/backend/leetcode-part2" },
-                { text: "Part3", link: "/backend/leetcode-part3" },
-              ],
-            },
-            { text: "剑指", link: "/backend/sword" },
-            { text: "C++", link: "/backend/effectivecpp" },
+            // { text: "Java", link: "/backend/java" },
+            // { text: "Algorithm", link: "/backend/algorithm" },
+            // {
+            //   text: "LeetCode",
+            //   items: [
+            //     { text: "Part1", link: "/backend/leetcode-part1" },
+            //     { text: "Part2", link: "/backend/leetcode-part2" },
+            //     { text: "Part3", link: "/backend/leetcode-part3" },
+            //   ],
+            // },
+            // { text: "剑指", link: "/backend/sword" },
+            // { text: "C++", link: "/backend/effectivecpp" },
           ],
         },
       ],

@@ -1,5 +1,6 @@
-# Linux 知识
-## clash
+# Linux
+## Clash
+### 云服务器安装
 25年3月买的99一年的阿里云服务器，不知道为什么访问 GitHub 失败，在23年还能正常用的。使用 [mihomo](https://github.com/MetaCubeX/mihomo) 进行代理。
 
 以下内容为 2025-3-31 日有效
@@ -68,7 +69,36 @@ web页面
 
 其实主要就是[照着抄人家的](https://nanodesu.net/archives/47/)，补充了还要 bash 配置
 
-## others
+### Mixin模式
+值得注意的点是使用 `...` 合并对象，可以理解成先把前者原封不动写上去，后者有相同键就用后者的值覆盖前者键（同一个键），多出来的其它键值就合并了。因此合并顺序也有关系。
+
+```js
+// content: yaml 格式化后的 JavaScript 对象
+// name: 配置文件文件名
+// url: 配置文件下载地址
+// notify: 发出系统通知方法，签名为function notify(title:string, message:string, silent:bool)
+module.exports.parse = async ({ content, name, url }, { axios, yaml, notify }) => {
+  const origin_dns_fallback = content["dns"]["fallback"];
+  content["dns"]["fallback"] = ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query", ...origin_dns_fallback];
+
+  const extra_prepend_rule = [
+    "DOMAIN-SUFFIX, dogfight360.com, DIRECT",
+    "DOMAIN, support.microsoft.com, DIRECT",
+    "DOMAIN, cn.vuejs.org, DIRECT",
+  ];
+
+  return {
+    ...content,
+    rules: [...extra_prepend_rule, ...content.rules],
+  };
+  // 另一种方法
+  // content.rules.unshift("DOMAIN, cn.vuejs.org, DIRECT");
+  // return content;
+};
+
+```
+
+## Others
 ### 管道重定向
 `some failed command > failed.txt 2>&1` 这个是把错误重定向到 `failed.txt`，为什么不能 `some failed command 2>&1 > failed.txt`，我的理解如下
 

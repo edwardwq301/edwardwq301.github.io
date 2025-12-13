@@ -1,9 +1,5 @@
----
-title: editor
-time: 2022-4-5
----
-
-## VIM
+# Editor
+## Vim
 ### Edit
 
 - visio block后进入insert `Shift-i`
@@ -13,6 +9,10 @@ time: 2022-4-5
 - put before the cursor `P`
 - delete the char under cursor and enter insert mode `s`, and `S or CC` is the whole line
 - search the word under cursor forward/backward `\* #` and can use `4\`* to use number
+- `;` 按相同方向重复上一次 `f/F/t/T`
+- `,` 反向重复上一次 `f/F/t/T`
+- `df{char}` 从光标处删到下一个 {char}（包含该字符）。
+- `dt{char}` 从光标处删到下一个 {char} 之前（不含该字符）。
 
 ### Move
 

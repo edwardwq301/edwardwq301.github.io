@@ -13,6 +13,7 @@
 - `,` 反向重复上一次 `f/F/t/T`
 - `df{char}` 从光标处删到下一个 {char}（包含该字符）。
 - `dt{char}` 从光标处删到下一个 {char} 之前（不含该字符）。
+- `copen` 进入 quickfix，quickfix 是一种用来进行 `edit-compile-edit` 的窗口，具体有 `cclose, cnext, cprev`
 
 ### Move
 

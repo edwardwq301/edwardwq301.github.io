@@ -9,14 +9,9 @@ export default defineConfig({
     search: { provider: "local" },
     nav: [
       { text: "Home", link: "/" },
-      {
-        text: "Tools",
-        link: "/tools/git",
-      },
-      {
-        text: "Backend",
-        link: "/backend/python",
-      },
+      { text: "Tools", link: "/tools/git" },
+      { text: "Backend", link: "/backend/python" },
+      { text: "Others", link: "/others/ps" },
     ],
     sidebar: {
       "/tools/": [
@@ -56,7 +51,10 @@ export default defineConfig({
       "/others/": [
         {
           text: "Others",
-          items: [{ text: "English", link: "/others/english" }],
+          items: [
+            { text: "Ps", link: "/others/ps" },
+            // { text: "English", link: "/others/english" },
+          ],
         },
       ],
     },

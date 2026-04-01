@@ -32,6 +32,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: "Python", link: "/backend/python" },
+            { test: "Python 装饰器", link: "/backend/py_decorater" },
             { text: "TypeScript", link: "/backend/typescript" },
             // { text: "Java", link: "/backend/java" },
             // { text: "Algorithm", link: "/backend/algorithm" },

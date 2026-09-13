@@ -6,6 +6,8 @@ export default defineConfig({
   description: "jane12's Note",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    // 左上角标题直接进内容，不经过正在跳转的根路径
+    logoLink: "/tools/editor",
     search: { provider: "local" },
     nav: [
       { text: "Tools", link: "/tools/git" },

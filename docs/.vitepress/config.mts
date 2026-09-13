@@ -32,7 +32,7 @@ export default defineConfig({
       "/backend/": [
         {
           text: "Backend",
-          collapsed: true,
+          // collapsed: true,
           items: [
             { text: "Python", link: "/backend/python" },
             { text: "Python 装饰器", link: "/backend/py_decorator" },
